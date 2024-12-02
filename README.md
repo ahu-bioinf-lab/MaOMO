@@ -1,8 +1,6 @@
-# coinstrained multi-objective molecule optimization (CMOMO)
+# adaptive evolutionary-based many-objective molecular optimization framework (MaOMO)
 
-Implementation of the method proposed in the paper "Balancing property optimization and constraint
-satisfaction for constrained multi-property molecular
-optimization" by Xin Xia, Yajie Zhang, Xiangxiang Zeng, Xingyi Zhang, Chunhou Zheng, Yansen Su.<sup>1</sup>
+Implementation of the method proposed in the paper "Leveraging adaptive evolutionary optimization for drug molecular design involving many properties" by Xin Xia, Yajie Zhang, Xiangxiang Zeng, Xingyi Zhang, Chunhou Zheng, Yansen Su.<sup>1</sup>
 
 ### Dependencies
 - [cddd](https://github.com/jrwnter/cddd)
@@ -29,39 +27,33 @@ The packages need to install:
   - [qmocddd](https://drive.google.com/file/d/1Wad0hxEfoqC5VzWGDPk9eBsFVkCi2o6Y/view?usp=drive_link)
 
 ### Data Description
-- data/qedplogp_test: dataset on Task1.
-- data/Guacamol_sample_800: dataset on Task2.
-- data/docking_test: dataset on Task3.
-- data/gsk3_test: dataset on Task4.
-- data/archive/: the bank library for each lead molecule on four tasks.
+- data/Guacamol_sample_800: dataset on Task1.
+- data/gsk3_test: dataset on Task2.
+- data/gskjnk_test: dataset on Task3.
+- data/bank liabrary/: the bank library for each lead molecule on the three tasks.
 
 ### File Description
-- sub_code/fitness.py: The script to calculate the objectives of optimization tasks.
-- sub_code/property.py: The script to calculate the molecular properties.
-- sub_code/generation_rule.py: The script to generate offspring molecules.
-- sub_code/selection_rule.py: The script to compare and select molecules.
-- sub_code/models.py: The encoder and decoder process.
-- sub_code/calc_no.py: The script to calculate the docking scores.
-- sub_code/mechanism.py: Guacamol tasks.
-- sub_code/nonDominationSort.py: the non-dominated relationships between molecules.
+- sub_code_many/NSGA2many.py: The script to generate and select high-quality molecules.
+- sub_code_many/property.py: The script to calculate the molecular properties.
+- sub_code_many/models.py: The encoder and decoder process.
+- sub_code_many/mechanism.py: Guacamol tasks.
+- sub_code_many/nonDominationSort.py: the non-dominated relationships between molecules.
 
 - download_default_model.sh: download the pre-trained encoder-decoder.
 - environment.yml: install the environment.
-- CMOMO_task1.py: optimization Task1. 
-- CMOMO_task2.py: optimization Task2. 
-- CMOMO_task3.py: optimization Task3. 
-- CMOMO_task4.py: optimization Task4.
+- MaOMO_task1.py: optimization Task1. 
+- MaOMO_task2.py: optimization Task2. 
+- MaOMO_task3.py: optimization Task3. 
 
-- Results/: final optimized molecules on four tasks obtained by CMOMO.
+- Results/: final optimized molecules on three tasks obtained by MaOMO.
 
 ### Optimization
 ```
-python CMOMO_task1.py
-python CMOMO_task2.py
-python CMOMO_task3.py
-python CMOMO_task4.py
+python MaOMO_task1.py
+python MaOMO_task2.py
+python MaOMO_task3.py
 ```
-The output results, i.e., optimized molecules, are summarized in TSCMO_task1_endsmiles, and further save in .csv file.
+The output results, i.e., optimized molecules, are summarized in ..._task1_endsmiles, and further save in .csv file.
 
 
 
